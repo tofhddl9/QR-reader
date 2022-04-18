@@ -6,6 +6,6 @@
         android:id="@+id/action_clear"
         android:title="모두 지우기"
         android:icon="@drawable/ic_baseline_delete_24"
-        app:showAsAction="collapseActionView"/>
+        app:showAsAction="always"/>
 
 </menu>
