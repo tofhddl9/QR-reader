@@ -18,6 +18,8 @@ class ScanResultViewModel(
         get() = _lastQrData
 
     fun insert(qrData: QrData) = viewModelScope.launch {
+        if (_lastQrData.value == qrData) return@launch
+
         _lastQrData.value = qrData
         historyRepository.insert(qrData)
     }

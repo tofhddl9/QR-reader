@@ -19,7 +19,7 @@ class HistoryViewModel(
         historyRepository.delete(qrData)
     }
 
-    fun clear(qrData: QrData) = viewModelScope.launch {
+    fun clear() = viewModelScope.launch {
         historyRepository.clear()
     }
 }

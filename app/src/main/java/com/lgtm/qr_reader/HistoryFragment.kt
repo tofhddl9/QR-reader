@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.lgtm.qr_reader.databinding.FragmentHistoryBinding
 import com.lgtm.qr_reader.delegate.viewBinding
 import com.lgtm.qr_reader.viewmodels.HistoryViewModel
@@ -22,10 +21,26 @@ class HistoryFragment : Fragment(R.layout.fragment_history) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initViews()
+        initToolbar()
+        initRecyclerView()
     }
 
-    private fun initViews() {
+    private fun initToolbar() = with(binding.toolBar) {
+        inflateMenu(R.menu.menu_history_tool_bar)
+        setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.action_clear -> {
+                    viewModel.clear()
+                    true
+                }
+                else -> {
+                    super.onOptionsItemSelected(it)
+                }
+            }
+        }
+    }
+
+    private fun initRecyclerView() {
         val adapter = HistoryListAdapter()
         binding.historyList.layoutManager = LinearLayoutManager(requireContext())
         binding.historyList.adapter = adapter

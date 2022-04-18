@@ -3,10 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_clear"
         android:title="모두 지우기"
         android:icon="@drawable/ic_baseline_delete_24"
-        app:showAsAction="ifRoom"/>
-
+        app:showAsAction="collapseActionView"/>
 
 </menu>

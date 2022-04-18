@@ -22,7 +22,6 @@ class MainFragment: Fragment(R.layout.fragment_main) {
                 timeStamp = result.timestamp
             )
 
-            Log.d("Doran", "$result")
             val action = MainFragmentDirections.actionMainFragmentToScanResultFragment(qrData)
             view?.findNavController()?.navigate(action)
         }

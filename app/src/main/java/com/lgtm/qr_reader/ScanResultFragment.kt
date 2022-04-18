@@ -34,6 +34,7 @@ class ScanResultFragment : Fragment(R.layout.fragment_scan_result) {
 
         viewModel.insert(args.qrData)
     }
+
     private fun initViews(qrData: QrData) {
         binding.backButton.setOnClickListener {
             popFragment()

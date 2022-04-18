@@ -3,6 +3,7 @@ package com.lgtm.qr_reader.data
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.lgtm.qr_reader.model.QrData
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +14,7 @@ interface QrDatabaseDao {
     @Query("SELECT * FROM QrData ORDER BY timeStamp")
     fun getAll(): Flow<List<QrData>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(qrData: QrData)
 
     @Query("DELETE FROM QrData")
