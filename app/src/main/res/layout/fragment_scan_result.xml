@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        android:scaleType="fitXY"
+        android:background="@color/zxing_transparent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scan_result_text_view"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0"/>
+
+    <TextView
+        android:id="@+id/scan_result_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        tools:text="http://sample.co.kr"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button"
+        app:layout_constraintBottom_toTopOf="@id/scan_result_time_stamp"/>
+
+    <TextView
+        android:id="@+id/scan_result_time_stamp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        tools:text="2022-01-04 11:12:13"
+        android:layout_margin="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scan_result_text_view"
+        app:layout_constraintBottom_toTopOf="@id/action_button"/>
+
+    <Button
+        android:id="@+id/action_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3292DA"
+        android:text="웹 사이트 열기"
+        android:layout_margin="4dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scan_result_time_stamp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
