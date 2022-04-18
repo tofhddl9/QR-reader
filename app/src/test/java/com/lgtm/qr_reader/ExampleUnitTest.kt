@@ -1,4 +1,4 @@
-package com.lgtm.default_Android_Project_Template
+package com.lgtm.qr_reader
 
 import org.junit.Test
 

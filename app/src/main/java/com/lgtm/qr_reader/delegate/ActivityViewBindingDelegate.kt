@@ -1,4 +1,4 @@
-package com.lgtm.default_Android_Project_Template.delegate
+package com.lgtm.qr_reader.delegate
 
 import android.app.Activity
 import android.view.LayoutInflater

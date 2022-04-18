@@ -9,7 +9,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.lgtm.default_android_project_template"
+        applicationId "com.lgtm.qr_reader"
         minSdk 23
         targetSdk 31
         versionCode 1
@@ -59,13 +59,14 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
 
+    implementation "androidx.preference:preference-ktx:$rootProject.preferenceVersion"
+
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
 
     // 3rd-party lib
-    implementation 'com.github.kenglxn.QRGen:android:2.6.0'
-    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
-    implementation "com.google.zxing:core:3.3.0"
+    implementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
+    implementation 'com.google.zxing:core:3.3.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

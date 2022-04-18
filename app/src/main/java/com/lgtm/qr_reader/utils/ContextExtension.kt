@@ -1,4 +1,4 @@
-package com.lgtm.default_Android_Project_Template.utils
+package com.lgtm.qr_reader.utils
 
 import android.content.Context
 import android.location.LocationManager

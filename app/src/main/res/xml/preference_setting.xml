@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="스캔 설정"/>
+
+    <SwitchPreferenceCompat
+        app:key="key_keep_screen_on"
+        app:singleLineTitle="false"
+        android:summary="Keep the screen on"
+        app:title="QR 코드 스캔시 바로 열기" />
+
+    <SwitchPreferenceCompat
+        app:key="key_keep_screen_on"
+        app:singleLineTitle="false"
+        android:summary="Keep the screen on"
+        app:title="히스토리 자동 저장" />
+
+</PreferenceScreen>
