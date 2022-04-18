@@ -11,8 +11,6 @@ import com.lgtm.qr_reader.delegate.viewBinding
 
 class SettingFragment : PreferenceFragmentCompat() {
 
-    private val binding by viewBinding(FragmentMainBinding::bind)
-
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preference_setting, rootKey)
 
