@@ -4,24 +4,24 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.lgtm.qr_reader.databinding.FragmentMainBinding
 import com.lgtm.qr_reader.delegate.viewBinding
 
 import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.lgtm.qr_reader.R
+import com.lgtm.qr_reader.databinding.FragmentScanBinding
 import com.lgtm.qr_reader.model.QrData
 import com.lgtm.qr_reader.model.QrType
 
-class MainFragment: Fragment(R.layout.fragment_main) {
+class ScanFragment: Fragment(R.layout.fragment_scan) {
 
-    private val binding by viewBinding(FragmentMainBinding::bind)
+    private val binding by viewBinding(FragmentScanBinding::bind)
 
     private val callback: BarcodeCallback = BarcodeCallback { result ->
         if (result.text != null) {
             val qrData = parseQrData(result)
 
-            val navAction = MainFragmentDirections.actionMainFragmentToScanResultFragment(qrData)
+            val navAction = ScanFragmentDirections.actionScanFragmentToScanResultFragment(qrData)
             view?.findNavController()?.navigate(navAction)
         }
     }
