@@ -27,7 +27,6 @@ local.properties
 captures/
 .externalNativeBuild/
 .cxx/
-*.apk
 output.json
 
 # IntelliJ
@@ -63,8 +62,8 @@ gen-external-apklibs
 # Covers files to be ignored for android development using Android Studio.
 
 # Built application files
-*.apk
-*.ap_
+*app/release
+*app/debug
 *.aab
 
 # Files for the ART/Dalvik VM
