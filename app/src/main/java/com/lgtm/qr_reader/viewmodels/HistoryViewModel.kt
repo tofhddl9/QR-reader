@@ -15,6 +15,7 @@ class HistoryViewModel(
 
     val allHistories: LiveData<List<QrData>> = historyRepository.allQrHistories.asLiveData()
 
+    // TODO : implement
     fun delete(qrData: QrData) = viewModelScope.launch {
         historyRepository.delete(qrData)
     }

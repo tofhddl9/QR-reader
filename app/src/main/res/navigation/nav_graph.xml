@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/main_fragment"
-        android:name="com.lgtm.qr_reader.MainFragment"
+        android:name="com.lgtm.qr_reader.view.scan.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -18,24 +18,28 @@
 
     <fragment
         android:id="@+id/history_fragment"
-        android:name="com.lgtm.qr_reader.HistoryFragment"
+        android:name="com.lgtm.qr_reader.view.history.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_history_fragment_to_scanResultFragment"
+            app:destination="@id/scanResultFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/setting_fragment"
-        android:name="com.lgtm.qr_reader.SettingFragment"
+        android:name="com.lgtm.qr_reader.view.setting.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
 
     <fragment
         android:id="@+id/scanResultFragment"
-        android:name="com.lgtm.qr_reader.ScanResultFragment"
+        android:name="com.lgtm.qr_reader.view.scan.ScanResultFragment"
         android:label="scanResultFragment"
         tools:layout="@layout/fragment_scan_result">
         <argument
             android:name="qrData"
-            app:argType="com.lgtm.qr_reader.model.QrData" />
+            app:argType="com.lgtm.qr_reader.model.QrData"/>
 
     </fragment>
 

@@ -8,13 +8,7 @@
     <SwitchPreferenceCompat
         app:key="key_keep_screen_on"
         app:singleLineTitle="false"
-        android:summary="Keep the screen on"
+        android:summary="(업데이트 예정)"
         app:title="QR 코드 스캔시 바로 열기" />
-
-    <SwitchPreferenceCompat
-        app:key="key_keep_screen_on"
-        app:singleLineTitle="false"
-        android:summary="Keep the screen on"
-        app:title="히스토리 자동 저장" />
 
 </PreferenceScreen>

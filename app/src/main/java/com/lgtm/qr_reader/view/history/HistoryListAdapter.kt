@@ -1,8 +1,9 @@
-package com.lgtm.qr_reader
+package com.lgtm.qr_reader.view.history
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -40,11 +41,18 @@ class HistoryListAdapter: ListAdapter<QrData, HistoryListAdapter.VH>(QrHistoryDi
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: QrData) {
+            binding.icon.setImageResource(item.type.iconRes)
+
             binding.qrCodeText.text = item.text
             binding.qrCodeText.isVisible = item.text != null
 
             binding.qrCodeTimestamp.isVisible = item.timeStamp != null
             binding.qrCodeTimestamp.text = DateUtil.getDateTime(item.timeStamp ?: 0)
+
+            binding.root.setOnClickListener {
+                val navAction = HistoryFragmentDirections.actionHistoryFragmentToScanResultFragment(item)
+                binding.root.findNavController().navigate(navAction)
+            }
         }
     }
 }

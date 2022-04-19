@@ -11,5 +11,6 @@ data class QrData(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val text: String? = null,
+    val type: QrType = QrType.TEXT,
     val timeStamp: Long? = null
 ) : Parcelable

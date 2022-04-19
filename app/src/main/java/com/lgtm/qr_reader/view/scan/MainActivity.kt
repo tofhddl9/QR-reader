@@ -1,4 +1,4 @@
-package com.lgtm.qr_reader
+package com.lgtm.qr_reader.view.scan
 
 import android.Manifest
 import android.content.Intent
@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.lgtm.qr_reader.R
 import com.lgtm.qr_reader.databinding.ActivityMainBinding
 import com.lgtm.qr_reader.delegate.viewBinding
 import com.lgtm.qr_reader.permission.PermissionManager

@@ -4,7 +4,7 @@ import androidx.annotation.WorkerThread
 import com.lgtm.qr_reader.model.QrData
 import kotlinx.coroutines.flow.Flow
 
-class QrHistoryLocalRepository(
+class QrHistoryRepositoryImpl(
     private val dao: QrDatabaseDao
 ) : QrHistoryRepository {
 
