@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_fragment) as NavHostFragment
-        val topFragment = navHostFragment.childFragmentManager.fragments[0]
+        val topFragment = navHostFragment.childFragmentManager.fragments.getOrNull(0)
 
         if (topFragment is NavigationRootFragment) {
             if (!isTerminateMessageShown) {
