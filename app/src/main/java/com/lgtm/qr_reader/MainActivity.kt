@@ -15,6 +15,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.lgtm.qr_reader.databinding.ActivityMainBinding
 import com.lgtm.qr_reader.delegate.viewBinding
 import com.lgtm.qr_reader.permission.PermissionManager
+import com.lgtm.qr_reader.view.scan.NavigationRootFragment
+import com.lgtm.qr_reader.view.scan.ScanFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -70,13 +72,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (!isTerminateMessageShown) {
-            isTerminateMessageShown = true
-            exitToast.show()
-            Handler(Looper.getMainLooper()).postDelayed({ isTerminateMessageShown = false }, 3000)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_fragment) as NavHostFragment
+        val topFragment = navHostFragment.childFragmentManager.fragments[0]
+
+        if (topFragment is NavigationRootFragment) {
+            if (!isTerminateMessageShown) {
+                isTerminateMessageShown = true
+                exitToast.show()
+                Handler(Looper.getMainLooper()).postDelayed({ isTerminateMessageShown = false }, 3000)
+            } else {
+                exitToast.cancel()
+                finish()
+            }
         } else {
-            exitToast.cancel()
-            finish()
+            super.onBackPressed()
         }
     }
 

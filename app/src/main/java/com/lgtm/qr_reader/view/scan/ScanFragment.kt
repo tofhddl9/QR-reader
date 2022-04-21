@@ -13,7 +13,9 @@ import com.lgtm.qr_reader.databinding.FragmentScanBinding
 import com.lgtm.qr_reader.model.QrData
 import com.lgtm.qr_reader.model.QrType
 
-class ScanFragment: Fragment(R.layout.fragment_scan) {
+interface NavigationRootFragment
+
+class ScanFragment: Fragment(R.layout.fragment_scan), NavigationRootFragment {
 
     private val binding by viewBinding(FragmentScanBinding::bind)
 
